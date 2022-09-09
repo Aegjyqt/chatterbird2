@@ -51,7 +51,7 @@ class BotDb:
                        ''')
         cursor.execute('''
                        CREATE TABLE IF NOT EXISTS tbl_terms(term_id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                       term_ru TEXT, term_en TEXT, term_comments TEXT, added_by TEXT, added_on TEXT)
+                       term_ru TEXT UNIQUE, term_en TEXT, term_comments TEXT, added_by TEXT, added_on TEXT)
                        ''')
         self._db.commit()
         cursor.close()
